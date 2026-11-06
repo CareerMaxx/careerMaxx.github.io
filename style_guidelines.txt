@@ -1,3 +1,16 @@
 CareerMaxx - Website Syle Guidelines
 SEG 2900 - Gr 17
 
+1.Overall Design
+
+2. Color Scheme
+
+3. Fonts and Text
+
+4. Navigation
+
+5. Buttons and Links
+
+6. Layout and Cards
+
+7. Code Organization
