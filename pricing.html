@@ -35,7 +35,7 @@
             <li><a href="team.html">Team</a></li>
         </ul>
 
-        <button class="button button-dark" id="openBtn">
+        <button class="button button-dark" id="openBtn" type="button">
             Get started →
         </button>
 
@@ -144,6 +144,32 @@
     </div>
 
 </div>
+<!-- Sign up popup -->
+<div class="overlay" id="popup">
+
+    <div class="modal">
+
+        <button class="close" id="closeBtn">&times;</button>
+
+        <h2>Get started</h2>
+        <p class="card-description">
+            Create your CareerMaxx account.
+        </p>
+
+        <form action="#" method="post">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Create account</button>
+        </form>
+
+    </div>
+
+</div>
+
+<!-- JavaScript for sign up popup -->
+<script src="script.js"></script>
+
 
 </body>
 </html>

@@ -244,24 +244,7 @@
 </div>
 
 <!-- JavaScript for sign up popup -->
-<script>
-    const popup = document.getElementById("popup");
-
-    document.getElementById("openBtn").onclick = () => {
-        popup.classList.add("show");
-    };
-
-    document.getElementById("closeBtn").onclick = () => {
-        popup.classList.remove("show");
-    };
-
-    // Close when clicking outside the popup
-    popup.onclick = (e) => {
-        if (e.target === popup) {
-            popup.classList.remove("show");
-        }
-    };
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
