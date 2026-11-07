@@ -2,6 +2,8 @@ CareerMaxx - Website Syle Guidelines
 SEG 2900 - Gr 17
 
 1.Overall Design
+- Simplistic, modern design using white space and rounded corners
+- Hover animations
 
 2. Color Scheme
 
@@ -14,3 +16,5 @@ SEG 2900 - Gr 17
 6. Layout and Cards
 
 7. Code Organization
+- Multiple static HTML pages sharing a style.css and a script.js file
+- CSS file is structured with :root variables and comment banners for clear organization
