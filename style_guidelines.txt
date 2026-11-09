@@ -1,20 +1,154 @@
 CareerMaxx - Website Syle Guidelines
 SEG 2900 - Gr 17
 
+
 1.Overall Design
+- White bavkground, purple and levender palette with special layout componentsw
 - Simplistic, modern design using white space and rounded corners
 - Hover animations
 
 2. Color Scheme
 
+Summary: 
+    * Use the colors in root or use the appropriate <color>-icon or -text 
+    * Most classes already impliment the root and their colors but you can add more components 
+
+    >>> Root <<<
+        Page background :       --background:    #fafafd;
+        Main texts:             --text:          #191b25;
+        Secondary text :        --gray:          #777985;
+        Borders and dividers :  --line:          #ebebf2;
+        Brand color :           --purple:        #5957c9;
+        Tags and highlights :   --light-purple:  #eceafe;
+        Primary buttons :       --dark:          #171923;
+
+        Score panel background : #f1f2f8
+        Pastel icon bavkgrounds : #eae8ff, #e3f1ff, #e2f5ed, #fff0e4, #fce7f1
+        Botom banner : #f1f2f8
+        Pricing cards colors: #C9C8F2, #9391E2, #5957C9
+
+    >>> Text <<< (Stems from root)
+        Purple text class: .pruple-text, 
+        Button dark calss : .button-dark
+        Button dark with hover class : .button-dark:hover
+
+    >>> Icons <<<
+        Purple icon class : .purple-icon
+        Blue icon class : .blue-icon
+        Green icon class : .green-icon
+        Peach icon class : .peach-icon
+        Pink icon class : .pink-icon
+
+
 3. Fonts and Text
+
+    >>> Texts <<<
+        Main font (body): font-family: "IBM Plex Sans", Arial, sans-serif;
+        
+        Header 1 title class :      h1 
+        Titles go in hero class:    hero
+        Tag class :                 .tag
+        Subtitle class :            .subtitle
+        Small note class :          .small-note
+
+    >>> Score panel <<<
+        Score card class :            .score-card
+        Score card (smaller header) : .score-card h2
+        Card description class :      .card-description
+        Small label class :          .small-label
+
+
+
 
 4. Navigation
 
-5. Buttons and Links
+    (Everyong must have these)
+    Navigation bar class : .navbar
+    Navigation links : .nav-links or .navlinks a
+    Navigation with hover : .nav-links a:hover
+    Nagiation when active: .nav-links a.active (do class="active)
+
+
+5. Buttons 
+
+    Button class : .button
+    Button (but dark wow) : .button-dark
+    Button (but dark AND hover): .button-dark:hover
+
 
 6. Layout and Cards
+
+Summary: 
+    * Page containers like .countainer or .feature wrap content and make it look nice 
+    * Flex helpers like .row-container and .column-container organize your content
+    * Border radius is Small: 10px, Medium: 16px-22px or Large: 28-30px with 1px solids
+
+
+    (Please follow the layout so that each page is consistent)
+
+    >>> Containers <<<
+        Normal container:   .container
+        Veritcal container: .row-container
+        Horizontal container: .column-container
+
+    >>> Section headings <<<
+        Section heading .section-heading or .section-heading .tag
+        Header 2 section heading: .section-heading h2 
+        Section heading (gray); .section-heading p
+
+    >>> Features container <<<
+        Features container :    .features
+        Singular feature box:   .feature
+        Feature hover animation: .feature-hover
+        Feature with smaller text: .feature h3
+        Feautre (gray) .feature p 
+
+    >>> Apearing overlays (Sign up Pop-up) <<<
+        Overlay that apears over page : .overlay, .overlay-show 
+        "Modal" layout classes : modal, modal h2, modal input, modal button
+        Closing it (button) : .close
+
+    >>> Icons <<<
+        Icon format class : .icon
+        Icon colors (check colors previous color section) .<<color>>-icon
+
+
+    >> Score card layouts <<<
+        Normal score card : .score-card
+        With header 2 : .score-card h2
+        Description : .card-description
+        Score circle icon : .ring-row, .ring, .ring-inner, ring-text b, .ring p
+
+    >>> Team page layout component <<<
+        Team grid container : .team-grid
+        Each member card : .team-card
+        Team card header 3 .team-card h3
+        Team card (gray) .team-card p
+        Avatar / icons for each team card : .avatar
+        Card footer / bottom : .card-footer
+
+    >>> Pricing page layout components <<<
+
+        Pricing card container: row-container-bottom
+        Same styling (all 3 cards): .free-card, Plus-card, Extra-card
+        Cards hover animation : .free-card:hover, Plus-card:hover, Extra-card:hover
+        Price card : .hero-cards, -herocards, .hero-left 
+        Subtitle in cards : .subtitle-pricing .subtitle-pricing p 
+
+        For each card, after the class, add:
+            h1 for big text
+            p for normal text
+            ul for the style/list
+            .button to start free trial
+            .button-hover for the button hover animation
+
+
+    >>> Bottom banner <<<
+    (Everyone already has these)
+    .bottom-banner , bottom-banner h3, bottom-banner p
 
 7. Code Organization
 - Multiple static HTML pages sharing a style.css and a script.js file
 - CSS file is structured with :root variables and comment banners for clear organization
+- Keep comments as /*--------- comment/title -------*/
+
