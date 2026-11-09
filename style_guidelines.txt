@@ -40,7 +40,7 @@ Summary:
         Peach icon :      .peach-icon
         Pink icon :       .pink-icon
 
-3. Fonts and Text
+3. Font , Text and Typography
 
     >>> Font <<<
         Font family : "IBM Plex Sans", Arial, sans-serif
