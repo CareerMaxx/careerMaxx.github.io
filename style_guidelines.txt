@@ -269,3 +269,23 @@ Summary:
     - HTML comments mark each section: <!-- Navigation Bar -->
     - Class names are lowercase with hyphens (e.g. .score-card)
     - Indent with 4 spaces
+11. JavaScript and Accessibility Extras
+
+    >>> script.js <<<
+        Close popup with Escape :    keydown listener on document
+        Form validation :            message shown in .form-message if the password has fewer than 8 characters
+        Success message :            "Thank you! Your account has been created." and the form is reset
+        Back to top button :         created by script.js (no HTML needed), class .back-to-top
+        Shown when :                 the page is scrolled more than 400px (class .visible is added)
+
+        Note: the extras are placed at the top of script.js, before the original popup code,
+        so they still work on a page that has no popup.
+
+    >>> CSS extras (end of style.css) <<<
+        Smooth scrolling :           html { scroll-behavior: smooth; }
+        Keyboard focus outline :     a, button, input :focus-visible (3px purple outline)
+        Form message (gray text) :   .form-message
+        Back to top button :         .back-to-top, .back-to-top.visible
+        Back to top on hover :       background turns purple (same as dark buttons)
+
+    
