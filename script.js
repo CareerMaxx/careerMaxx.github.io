@@ -122,3 +122,27 @@ if (slides.length > 0 && dotsBox && prevBtn && nextBtn) {
     // Change slide automatically every 6 seconds
     setInterval(() => showSlide(current + 1), 6000);
 }
+
+// ---------- Launch mailing list (home page) ----------
+
+const launchForm = document.getElementById("launchForm");
+
+//Only run this on pages that have the mailing list form
+if (launchForm) {
+
+    const launchEmail = document.getElementById("launchEmail")
+    const launchMessage = document.getElementById("launchMessage")
+
+    launchForm.addEventListener("submit", (e) => {
+        //Stop the page from reloading
+        e.preventDefault();
+
+        if (!launchEmail.value.includes("@uottawa.ca")) {
+            launchMessage.textContent = "Please enter a valid UOttawa email address.";
+            return;
+        }
+
+        launchMessage.textContent = "Thank you! We'll email you on launch day.";
+        launchForm.reset();
+    });
+}

@@ -439,25 +439,6 @@ h1 {
     color: var(--gray);
 }
 
-/* ---------- Bottom Banner ---------- */
-
-.bottom-banner {
-    background-color: #f0f1f7;
-    border-radius: 20px;
-    padding: 28px;
-    margin-top: 60px;
-}
-
-.bottom-banner h3 {
-    font-size: 19px;
-    margin-bottom: 8px;
-}
-
-.bottom-banner p {
-    color: var(--gray);
-    font-size: 14px;
-}
-
 /* ---------- Sign Up Popup ---------- */
 
 .overlay {
@@ -1077,4 +1058,321 @@ input:focus-visible {
         bottom: 50px;
         transform: none;
     }
+}
+
+/* ---------- Statistics section (home page) ---------- */
+/* One rounded box per row */
+
+.stats-row {
+    border-radius: 28px;
+    padding: 36px 40px 40px;
+    margin-bottom: 20px;
+}
+
+/* Small title at the top of each row */
+
+.stats-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+/* The three numbers side by side. They stack on small screens. */
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 40px;
+}
+
+.stat {
+    flex: 1 1 200px;
+}
+
+.stat-number {
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.stat-text {
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+.stat-source {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* Row 1: dark */
+
+.stats-dark {
+    background-color: var(--dark);
+    color: white;
+}
+
+.stats-dark .stats-label {
+    color: #c9c8f2;
+}
+
+.stats-dark .stat-text,
+.stats-dark .stat-source {
+    color: #d9d9e6;
+}
+
+/* Row 2: white */
+
+.stats-light {
+    background-color: white;
+    border: 1px solid var(--line);
+}
+
+.stats-light .stats-label,
+.stats-light .stat-number {
+    color: var(--purple);
+}
+
+.stats-light .stat-text,
+.stats-light .stat-source {
+    color: var(--gray);
+}
+
+/* Row 3: lavender */
+
+.stats-purple {
+    background-color: var(--light-purple);
+}
+
+.stats-purple .stats-label {
+    color: var(--purple);
+}
+
+.stats-purple .stat-text {
+    color: #4a4c58;
+}
+
+/* ---------- Reviews Section (home page) ---------- */
+
+/* Each review reuses the white .feature card.          */
+/* This pushes the person's name to the bottom of the card. */
+
+.review {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 22px;
+}
+
+/* The quote itself: darker and a bit bigger than normal card text */
+
+.feature .review-quote {
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Avatar and name side by side */
+
+.review-person {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Small round circle with initials */
+
+.review-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--purple);
+    flex-shrink: 0;
+}
+
+.review-name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.review-program {
+    font-size: 14px;
+    color: var(--gray);
+}
+
+/* ---------- FAQ Section (home page) ---------- */
+
+/* The list of questions, one under the other */
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 900px;
+}
+
+/* One white box per question */
+
+.faq-item {
+    background-color: white;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px 24px;
+}
+
+/* The question (the part you click) */
+
+.faq-item summary {
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.faq-item summary:hover {
+    color: var(--purple);
+}
+
+/* The answer (shown when the question is open) */
+
+.faq-item p {
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 14px;
+    }
+
+/* ---------- Launch Mailing List (home page) ---------- */
+
+/* Lavender box: text on the left, form on the right. */
+/* They stack on small screens.                        */
+
+.launch {
+    background-color: var(--light-purple);
+    border-radius: 28px;
+    padding: 44px 40px;
+    margin-top: 65px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px 40px;
+}
+
+.launch-text {
+    flex: 1 1 320px;
+}
+
+.launch-text h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.launch-text p {
+    font-size: 16px;
+    color: #4a4c58;
+}
+
+/* Email box and button side by side */
+
+.launch-form {
+    flex: 1 1 360px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.launch-field {
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.launch-field label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.launch-field input {
+    width: 100%;
+    height: 50px;
+    padding: 0 16px;
+    border: 1px solid #c9c8f2;
+    border-radius: 12px;
+    background-color: white;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+/* Confirmation or error message under the form */
+
+.launch-message {
+    width: 100%;
+    font-size: 13px;
+    color: var(--purple);
+}
+
+/* ---------- Footer (all pages) ---------- */
+
+/* Three groups side by side. They stack on small screens. */
+
+.footer {
+    border-top: 1px solid var(--line);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 34px 30px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px 40px;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+/* Logo and name */
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+/* Page links */
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 30px;
+}
+
+.footer a {
+    color: var(--gray);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--purple);
+}
+
+/* Contact and copyright lines */
+
+.footer-info p {
+    margin-bottom: 10px;
+}
+
+.footer-info a {
+    display: block;
+    margin-bottom: 6px;
 }
