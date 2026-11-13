@@ -1,5 +1,3 @@
-
-
 // Close the popup with the Escape key
 document.addEventListener("keydown", (e) => {
     const p = document.getElementById("popup");
@@ -75,54 +73,52 @@ const closeBtn = document.getElementById("closeBtn");
     };
 
 // ---------- Carousel (home page) ----------
+
 const slides = document.querySelectorAll(".slide");
 const dotsBox = document.getElementById("dots");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 
-//Only run this on pages that have carousel
+// Only run this on pages that have the carousel
 if (slides.length > 0 && dotsBox && prevBtn && nextBtn) {
-    // The slide we are showing right now (0)
-    let currentSlide = 0;
 
-    //Make 1 dot for each slide ·
-    slides.forEach((slide, i)) => {
+    // The slide we are showing right now (0 is the first one)
+    let current = 0;
+
+    // Make one dot for each slide
+    slides.forEach((slide, i) => {
         const dot = document.createElement("button");
         dot.className = "dot";
         dot.type = "button";
-        det.setAttribute("aria-label", `Go to slide ${i + 1}`);
-        dot.onclick = () => showSlide();
+        dot.setAttribute("aria-label", "Go to slide " + (i + 1));
+        dot.onclick = () => showSlide(i);
         dotsBox.appendChild(dot);
+    });
+
+    const dots = dotsBox.querySelectorAll(".dot");
+
+    // Show slide number n and hide the others
+    function showSlide(n) {
+
+        // Go back to the start after the last slide,
+        // and to the end when going back from the first
+        current = (n + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === current);
         });
 
-        const dots = dotsBox.querySelectorAll(".dot");
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === current);
+        });
+    }
 
-        //Show slide number n and hide the others
-        function showSlide(n){
+    prevBtn.onclick = () => showSlide(current - 1);
+    nextBtn.onclick = () => showSlide(current + 1);
 
-            //Go back to the start after last slide
-            //And to the end with going from first
-            current = (n+ slides.length) % slides.length;
+    // Start on the first slide
+    showSlide(0);
 
-            slides.forEach((slide, i) => {
-                slide.classList.toggle("active", i === current);
-            });
-
-
-            dots.forEach((dot, i) => {
-                dot.classList.toggle("active", i === current);
-            });
-       }
-
-       //prev and next buttons
-       prevBtn.onclick = () => showSlide(current - 1);
-       nextBtn.onclick = () => showSlide(current + 1);
-
-       //Start on the first slide (0)
-       showSlide(0);
-
-       //Auto slide every 6 seconds
-       setInterval(() => showSlide(current + 1), 6000);
+    // Change slide automatically every 6 seconds
+    setInterval(() => showSlide(current + 1), 6000);
 }
-
-

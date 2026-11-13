@@ -871,18 +871,26 @@ input:focus-visible {
     background-color: var(--purple);
 }
 
-/* ---------- Carousel (homepage) ---------- */
+
+/* ---------- Carousel (home page) ---------- */
+
 .carousel {
     position: relative;
-    height: 500px:
+    height: 500px;
     margin-top: 28px;
     border-radius: 28px;
     overflow: hidden;
     background-color: var(--dark);
-    }
-/* Every slide sits on top of others, Only .active is visible */
-.carousel-item {
-    position : absolute;
+    isolation: isaolate;
+    transform: translateZ(0);
+    clip-path: inset(0 round 28px);
+
+}
+
+/* Every slide sits on top of the others. Only .active is visible. */
+
+.slide {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -890,27 +898,33 @@ input:focus-visible {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.6s ease, visibility 0.6s ease;
-    }
+    border-radius: inherit;
+    overflow: hidden;
+}
 
-.slide.active{
+.slide.active {
     opacity: 1;
     visibility: visible;
-    }
+}
 
-/*Background picture. Change blur (8px) to make it ore or less
-blurry. It is a bit bigger than slide, so it blurred hidden */
+/* Background picture. Change blur(8px) to make it more or less blurry. */
+/* It is a bit bigger than the slide so the blurred edges stay hidden.  */
+
 .slide-bg {
     position: absolute;
     top: -30px;
     left: -30px;
     right: -30px;
     bottom: -30px;
-    background-color : #2e2d66;
+    background-color: #2e2d66;
     background-size: cover;
     background-position: center;
-    filter: blur(8px);`
-    }
-/* Dark layer over the picture so the white text is easy to read */
+    filter: blur(3px);
+}
+
+/* Dark layer over the picture so the white text is easy to read. */
+/* Change 0.55 to make it darker (0.8) or lighter (0.3).          */
+
 .slide-overlay {
     position: absolute;
     top: 0;
@@ -918,54 +932,58 @@ blurry. It is a bit bigger than slide, so it blurred hidden */
     width: 100%;
     height: 100%;
     background-color: rgba(23, 25, 35, 0.55);
-    }
+}
 
 .slide-text {
     position: relative;
     height: 100%;
     padding: 60px 110px 90px;
     display: flex;
-    flex-direction; column;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 18px;
     color: white;
-    }
+}
 
-.slide-text {
+.slide-text .tag {
     margin-bottom: 0;
-    }
+}
 
 .slide-title {
-    font-size: 54ox;
+    font-size: 54px;
     font-weight: 700;
-    line-height; 1.15;
+    line-height: 1.15;
     letter-spacing: -1.5px;
     max-width: 760px;
-    }
+}
+
 .slide-text p {
     font-size: 19px;
-    line-height: 165;
+    line-height: 1.6;
     max-width: 600px;
-    }
+    color: #f1f1f8;
+}
 
 .button-light {
     background-color: white;
-    color: var(--dark_;
+    color: var(--dark);
     font-weight: 600;
     margin-top: 10px;
-    }
-.button-light: hover {
-    background-color: var(--light-purple);
-    }
+}
 
-/*Arrows*/
+.button-light:hover {
+    background-color: var(--light-purple);
+}
+
+/* Arrows */
+
 .carousel-arrow {
     position: absolute;
-    top 50%;
+    top: 50%;
     transform: translateY(-50%);
     width: 48px;
-    height:48px;
+    height: 48px;
     border: none;
     border-radius: 50%;
     background-color: white;
@@ -973,21 +991,22 @@ blurry. It is a bit bigger than slide, so it blurred hidden */
     font-size: 28px;
     line-height: 1;
     cursor: pointer;
-    }
+}
 
-.carousel-arrow: hover {
+.carousel-arrow:hover {
     background-color: var(--light-purple);
-    }
+}
 
 .prev-arrow {
     left: 24px;
-    }
+}
 
 .next-arrow {
     right: 24px;
 }
 
-/*Dots*/
+/* Dots */
+
 .carousel-dots {
     position: absolute;
     bottom: 24px;
@@ -996,8 +1015,9 @@ blurry. It is a bit bigger than slide, so it blurred hidden */
     display: flex;
     justify-content: center;
     gap: 10px;
-    }
- .dot {
+}
+
+.dot {
     width: 10px;
     height: 10px;
     border: none;
@@ -1005,42 +1025,56 @@ blurry. It is a bit bigger than slide, so it blurred hidden */
     background-color: rgba(255, 255, 255, 0.55);
     cursor: pointer;
     transition: width 0.3s ease, background-color 0.3s ease;
-    }
+}
+
 .dot.active {
     width: 28px;
     background-color: white;
-    }
-/*Carousel on tablets and phones */
-@media (max-wdth: 900px) {
+}
+
+/* Carousel on tablets and phones */
+
+@media (max-width: 900px) {
+
     .carousel {
         height: 400px;
-        }
+    }
+
     .slide-text {
         padding: 40px 80px 80px;
-        }
-    .slide-title
+    }
+
+    .slide-title {
         font-size: 38px;
-        }
+    }
+
     .slide-text p {
         font-size: 16px;
-        }
     }
+}
+
 @media (max-width: 500px) {
+
     .carousel {
-        height: 300px;
-        border-radius: 20px
-        }
+        height: 480px;
+        border-radius: 20px;
+        clip-path: inset(0 round 20px);
+    }
+
     .slide-text {
         padding: 30px 24px 120px;
-        }
+    }
+
     .slide-title {
         font-size: 30px;
-        letter-spaceing : -1px;
-        }
-}
-/* move the arrows to the bottom so they dont cover the text */
-.carousel-arrow {
-    top: auto;
-    bottom: 50px;
-    transform: none;
+        letter-spacing: -1px;
     }
+
+    /* Move the arrows to the bottom so they don't cover the text */
+
+    .carousel-arrow {
+        top: auto;
+        bottom: 50px;
+        transform: none;
+    }
+}
