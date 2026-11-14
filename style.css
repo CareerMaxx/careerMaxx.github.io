@@ -9,7 +9,13 @@
     --purple: #5957c9;
     --light-purple: #eceafe;
     --dark: #171923;
+
+    --peach: #fff0e4;
+    --light-green: #e2f5ed;
+    --light-blue: #e3f1ff;
+    --light-pink: #fce7f1;
 }
+
 
 /* ---------- Basic Setup ---------- */
 
@@ -327,6 +333,21 @@ h1 {
     transition: transform 0.3s ease;
 }
 
+
+.feature-split{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+.feature-split  .column-container,
+.feature-split .feature-image {
+    flex: 1;
+    min-width: 0;
+
+}
+
 /* Small movement when hovering */
 
 .feature:hover {
@@ -359,25 +380,42 @@ h1 {
     color: var(--purple);
 }
 
+.icon-circle{
+    border-radius: 450px;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+}
+
+.icon-text{
+    width: fit-content;
+    padding: 10px;
+    
+}
+
 .purple-icon {
     background-color: #eae8ff;
 }
 
 .blue-icon {
-    background-color: #e3f1ff;
+    background-color: var(--light-blue);
 }
 
 .green-icon {
-    background-color: #e2f5ed;
+    background-color: var(--light-greend);
 }
 
 .peach-icon {
-    background-color: #fff0e4;
+    background-color: var(--peach);
 }
 
 .pink-icon {
-    background-color: #fce7f1;
+    background-color: var(--light-pink);
 }
+
+
+    
+    
 
 /* ---------- Team Page ---------- */
 
@@ -1209,8 +1247,8 @@ input:focus-visible {
 /* ---------- FAQ Section (home page) ---------- */
 
 /* The list of questions, one under the other */
-
-.faq {
+/* Made it into general drop down options */
+.dropdown {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -1219,7 +1257,7 @@ input:focus-visible {
 
 /* One white box per question */
 
-.faq-item {
+.dropdown-item {
     background-color: white;
     border: 1px solid var(--line);
     border-radius: 16px;
@@ -1228,19 +1266,19 @@ input:focus-visible {
 
 /* The question (the part you click) */
 
-.faq-item summary {
+.dropdown-item summary {
     font-size: 17px;
     font-weight: 600;
     cursor: pointer;
 }
 
-.faq-item summary:hover {
+.dropdown-item summary:hover {
     color: var(--purple);
 }
 
 /* The answer (shown when the question is open) */
 
-.faq-item p {
+.dropdown-item p {
     color: var(--gray);
     font-size: 15px;
     line-height: 1.6;
@@ -1318,6 +1356,27 @@ input:focus-visible {
     font-size: 13px;
     color: var(--purple);
 }
+
+/*---------- Images ----------------- */
+
+/* Rounded border iamge anyone can use */
+.feature-demo,
+.feature-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    height: 600px;
+    width: 100%;
+}
+
+.feature-demo{
+    height: 580px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
 
 /* ---------- Footer (all pages) ---------- */
 
