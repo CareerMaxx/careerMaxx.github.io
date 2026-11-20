@@ -1466,3 +1466,239 @@ input:focus-visible {
 .team-links a:hover {
     text-decoration: underline;
 }
+/* ---------- Pricing Feature Comparison ---------- */
+
+
+.pricing-comparison {
+    padding: 35px 0 75px;
+}
+
+
+.pricing-comparison .section-heading {
+    margin-top: 65px;
+}
+
+
+.comparison-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 12px 35px rgba(25, 27, 37, 0.045);
+}
+
+
+.comparison-table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+
+.comparison-table th,
+.comparison-table td {
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--line);
+}
+
+
+.comparison-table thead th {
+    padding-top: 26px;
+    padding-bottom: 26px;
+    background: #f6f5ff;
+    font-size: 17px;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+.comparison-table thead th:first-child {
+    width: 49%;
+    text-align: left;
+    background: #f8f8fc;
+}
+
+
+.comparison-table thead th:nth-child(2) { background: #eae9fa; }
+.comparison-table thead th:nth-child(3) { background: #dbd9fa; }
+.comparison-table thead th:nth-child(4) { background: #5957c9; color: white; }
+
+
+.comparison-table thead small {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+
+.comparison-table tbody th[scope="row"] {
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+
+.comparison-table tbody td {
+    text-align: center;
+}
+
+
+.comparison-table .comparison-category th {
+    padding: 16px 22px;
+    background: #f5f5fb;
+    color: var(--purple);
+    font-size: 16px;
+    text-align: left;
+    letter-spacing: 0.01em;
+}
+
+
+.comparison-table tbody tr:not(.comparison-category):hover {
+    background: #faf9ff;
+}
+
+
+.comparison-status {
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+.comparison-status.included {
+    color: var(--purple);
+    background: #eceafe;
+}
+
+
+.comparison-status.excluded {
+    color: #9ca0aa;
+    background: #f1f2f5;
+}
+
+
+@media (max-width: 900px) {
+    .pricing-comparison { padding-bottom: 35px; }
+    .comparison-table th,
+    .comparison-table td { padding: 15px 17px; }
+}
+
+
+
+
+
+
+/* ---------- Soft Lavender Corner Decorations ---------- */
+
+
+/* Keep decorations behind the actual content */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Shared dotted pattern */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+
+
+    background-image: radial-gradient(
+        circle,
+        rgba(125, 116, 218, 0.48) 2.8px,
+        transparent 3.6px
+    );
+
+
+    background-size: 30px 30px;
+    background-repeat: repeat;
+}
+
+
+/* ---------- Upper Left Corner ---------- */
+
+
+body::before {
+    bottom: 0;
+    left: 0;
+
+
+    width: clamp(260px, 32vw, 460px);
+    height: clamp(150px, 25vh, 260px);
+
+
+    -webkit-mask-image: radial-gradient(
+        ellipse at top left,
+        black 0%,
+        black 20%,
+        rgba(0, 0, 0, 0.85) 38%,
+        transparent 73%
+    );
+
+
+    mask-image: radial-gradient(
+        ellipse at bottom left,
+        black 0%,
+        black 20%,
+        rgba(0, 0, 0, 0.85) 38%,
+        transparent 73%
+    );
+}
+
+
+/* ---------- Lower Right Corner ---------- */
+
+
+body::after {
+    bottom: 0;
+    right: 0;
+
+
+    width: clamp(290px, 35vw, 500px);
+    height: clamp(180px, 30vh, 320px);
+
+
+    background-position: 12px 12px;
+
+
+    -webkit-mask-image: radial-gradient(
+        ellipse at bottom right,
+        black 0%,
+        black 22%,
+        rgba(0, 0, 0, 0.85) 40%,
+        transparent 75%
+    );
+
+
+    mask-image: radial-gradient(
+        ellipse at bottom right,
+        black 0%,
+        black 22%,
+        rgba(0, 0, 0, 0.85) 40%,
+        transparent 75%
+    );
+}
+
+
+/* ---------- Smaller Screens ---------- */
+
+
+@media (max-width: 900px) {
+    body::before,
+    body::after {
+        display: none;
+    }
+}
