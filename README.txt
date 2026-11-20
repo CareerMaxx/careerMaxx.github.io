@@ -1,4 +1,4 @@
-resumaxx.github.io
+careermaxx.github.io
 Product name: CareerMaxx
 
 Product description:

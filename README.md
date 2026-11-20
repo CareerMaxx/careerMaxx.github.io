@@ -1,4 +1,4 @@
-# resumaxx.github.io
+# careermaxx.github.io
 Product name: CareerMaxx
 # Product description: 
 Application that searches the internet for opportunities and experiences (such as clubs, COOP, internships, free programs, presentations, etc) related to your field of study.
