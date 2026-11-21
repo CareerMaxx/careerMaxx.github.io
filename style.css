@@ -900,7 +900,7 @@ input:focus-visible {
     border-radius: 28px;
     overflow: hidden;
     background-color: var(--dark);
-    isolation: isaolate;
+    isolation: isolate;
     transform: translateZ(0);
     clip-path: inset(0 round 28px);
 
