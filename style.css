@@ -53,10 +53,22 @@ body {
     gap: 10px;
 }
 
-/* Line break - Custom spacing */
+/* Line breaks and Custom spacing */
+
+.small-space{
+    margin-bottom: 50px;
+}
 
 .large-space{
     margin-bottom: 150px;
+}
+
+.squiggle-divider{
+    background-size: contain;
+    background-position: center;
+    margin-bottom: 20px;
+    padding: 30px;
+    background-image: url('UI-Images/Features_Squiggle_Divider.png');
 }
 
 /* ---------- Navigation Bar ---------- */
