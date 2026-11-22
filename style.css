@@ -53,6 +53,12 @@ body {
     gap: 10px;
 }
 
+/* Line break - Custom spacing */
+
+.large-space{
+    margin-bottom: 150px;
+}
+
 /* ---------- Navigation Bar ---------- */
 
 .navbar {
