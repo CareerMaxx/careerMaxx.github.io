@@ -673,7 +673,7 @@ h1 {
 
 .free-card,
 .Plus-card,
-.Extra-card {
+.Pro-card {
     flex: 1;
     min-width: 0;
     border: none;
@@ -693,7 +693,7 @@ h1 {
 
 .free-card:hover,
 .Plus-card:hover,
-.Extra-card:hover {
+.Pro-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
@@ -758,27 +758,27 @@ h1 {
     line-height: 1.5;
 }
 
-/* ---------- Extra Card ---------- */
+/* ---------- Pro Card ---------- */
 
-.Extra-card {
+.Pro-card {
     background-color: #5957C9;
     color: black;
     min-height: 460px;
 }
 
-.Extra-card h1 {
+.Pro-card h1 {
     font-size: 28px;
     margin: 0;
     letter-spacing: -1px;
 }
 
-.Extra-card p {
+.Pro-card p {
     font-size: 30px;
     font-weight: 700;
     margin: 0;
 }
 
-.Extra-card ul {
+.Pro-card ul {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -793,7 +793,7 @@ h1 {
 
 .free-card .button,
 .Plus-card .button,
-.Extra-card .button {
+.Pro-card .button {
     margin-top: auto;
     width: 100%;
     flex-shrink: 0;
@@ -803,7 +803,7 @@ h1 {
 
 .free-card .button:hover,
 .Plus-card .button:hover,
-.Extra-card .button:hover {
+.Pro-card .button:hover {
     background-color: #33354A;
 }
 
@@ -823,7 +823,7 @@ h1 {
 
     .free-card,
     .Plus-card,
-    .Extra-card {
+    .Pro-card {
         width: 100%;
         min-height: auto;
         padding: 30px;
@@ -844,7 +844,7 @@ h1 {
 
     .free-card,
     .Plus-card,
-    .Extra-card {
+    .Pro-card {
         border-radius: 25px;
         padding: 25px;
     }
