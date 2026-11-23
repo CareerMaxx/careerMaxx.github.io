@@ -375,6 +375,7 @@ h1 {
 }
 
 .feature-split{
+    
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1137,6 +1138,36 @@ input:focus-visible {
         transform: none;
     }
 }
+
+/*------------ Features page on tablets and phones -----------*/
+
+@media (max-width: 900px) {
+    .feature-split{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .feature-split.feature-image{
+        height: auto;
+    }
+
+    .feature-split .column-container, 
+    .feature-split .feature-image{
+        flex: none;
+    }
+
+    .feature-demo{
+        height: auto;
+        aspect-ratio: 4/3;
+    }
+    .feature-split .logo{
+        flex-wrap: wrap;
+    }
+
+    .feature-split .logo img{
+        width: 60px;
+    }
+}
+
 
 /* ---------- Statistics section (home page) ---------- */
 /* One rounded box per row */
