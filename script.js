@@ -53,13 +53,13 @@ topBtn.onclick = () => {
 // ---------- Original code (team page) ----------
 //Get popup
 const popup = document.getElementById("popup");
-const openBtn = document.getElementById("openBtn");
+const openBtns = document.querySelectorAll(".open-popup");
 const closeBtn = document.getElementById("closeBtn");
 
     // Open popup
-    openBtn.onclick = () => {
-        popup.classList.add("show");
-    };
+    openBtns.forEach((btn) => {
+        btn.onclick = () => popup.classList.add("show");
+    });
     // Close popup
     closeBtn.onclick = () => {
         popup.classList.remove("show");
@@ -82,8 +82,12 @@ const nextBtn = document.getElementById("nextBtn");
 // Only run this on pages that have the carousel
 if (slides.length > 0 && dotsBox && prevBtn && nextBtn) {
 
+    
     // The slide we are showing right now (0 is the first one)
     let current = 0;
+
+    // New timer ID that gets stored
+    let timer;
 
     // Make one dot for each slide
     slides.forEach((slide, i) => {
@@ -91,7 +95,10 @@ if (slides.length > 0 && dotsBox && prevBtn && nextBtn) {
         dot.className = "dot";
         dot.type = "button";
         dot.setAttribute("aria-label", "Go to slide " + (i + 1));
-        dot.onclick = () => showSlide(i);
+        dot.onclick = () => {
+
+            showSlide(i)
+        resetTimer()};
         dotsBox.appendChild(dot);
     });
 
@@ -113,14 +120,23 @@ if (slides.length > 0 && dotsBox && prevBtn && nextBtn) {
         });
     }
 
-    prevBtn.onclick = () => showSlide(current - 1);
-    nextBtn.onclick = () => showSlide(current + 1);
+    function resetTimer(){
+        clearInterval(timer);
+        timer = setInterval(() => showSlide(current + 1), 6000);
+    }
+
+    prevBtn.onclick = () => {
+        showSlide(current - 1); 
+        resetTimer();};
+    nextBtn.onclick = () => {
+        showSlide(current + 1); 
+        resetTimer();};
 
     // Start on the first slide
     showSlide(0);
 
     // Change slide automatically every 6 seconds
-    setInterval(() => showSlide(current + 1), 6000);
+    resetTimer();
 }
 
 // ---------- Launch mailing list (home page) ----------

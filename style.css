@@ -797,7 +797,7 @@ h1 {
 
 .Pro-card {
     background-color: #5957C9;
-    color: black;
+    color: white;
     min-height: 460px;
 }
 
@@ -1141,7 +1141,7 @@ input:focus-visible {
 
 /*------------ Features page on tablets and phones -----------*/
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .feature-split{
         flex-direction: column;
         align-items: stretch;
@@ -1165,6 +1165,27 @@ input:focus-visible {
 
     .feature-split .logo img{
         width: 60px;
+    }
+
+    .squiggle-divider{
+        height: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 20px;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 1500px) {
+ 
+    .squiggle-divider{
+        height: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 20px;
+        padding: 30px;
     }
 }
 
